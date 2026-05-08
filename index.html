@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bol Ke Dikha - AI Text-to-Speech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Floating particles background -->
+    <div id="particles-background"></div>
+
+    <main class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <h1 class="logo">Bol Ke Dikha <span class="mic-icon">🎤</span></h1>
+            <p class="tagline">Type it. Hear it. Bol Ke Dikha.</p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2 class="hero-title">Turn Your Text Into Voice</h2>
+            <p class="hero-subtitle">Write anything and generate speech instantly.</p>
+        </section>
+
+        <!-- Main UI Card -->
+        <section class="glass-card main-interface">
+            <!-- Text Area -->
+            <div class="input-group full-width">
+                <textarea id="text-input" placeholder="Type what you want the AI to say..." rows="5"></textarea>
+            </div>
+
+            <div class="controls-grid">
+                <!-- Voice Selection -->
+                <div class="input-group">
+                    <label for="voice-select">Voice</label>
+                    <div class="select-wrapper">
+                        <select id="voice-select">
+                            <option value="male">Male Voice</option>
+                            <option value="female">Female Voice</option>
+                            <option value="ai">AI Voice</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Language Selection -->
+                <div class="input-group">
+                    <label for="lang-select">Language</label>
+                    <div class="select-wrapper">
+                        <select id="lang-select">
+                            <option value="en">English</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Speed Control -->
+                <div class="input-group full-width slider-group">
+                    <label for="speed-slider">Speed: <span id="speed-value">1.0x</span></label>
+                    <input type="range" id="speed-slider" min="0.5" max="2.0" step="0.1" value="1.0">
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions">
+                <button id="generate-btn" class="btn primary-btn">
+                    <span class="btn-text">Generate Audio</span>
+                    <div class="loader hidden"></div>
+                </button>
+            </div>
+
+            <!-- Audio Player Section -->
+            <div id="player-section" class="player-section hidden">
+                <div class="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <p id="playing-status" style="margin-top: 1rem; color: var(--text-muted); text-align: center;">Playing
+                    audio live...</p>
+                <div class="actions mt-2" style="gap: 1.5rem">
+                    <button id="stop-btn" class="btn secondary-btn">
+                        Stop Audio
+                    </button>
+                    <button id="download-btn" class="btn secondary-btn" disabled>
+                        Download MP3
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
